@@ -1,0 +1,5 @@
+C:\Users\OnshoreBC2\documents\visual studio 2013\Projects\MVCSports\DAL\bin\Debug\DAL.dll
+C:\Users\OnshoreBC2\documents\visual studio 2013\Projects\MVCSports\DAL\bin\Debug\DAL.pdb
+C:\Users\OnshoreBC2\documents\visual studio 2013\Projects\MVCSports\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\OnshoreBC2\documents\visual studio 2013\Projects\MVCSports\DAL\obj\Debug\DAL.dll
+C:\Users\OnshoreBC2\documents\visual studio 2013\Projects\MVCSports\DAL\obj\Debug\DAL.pdb

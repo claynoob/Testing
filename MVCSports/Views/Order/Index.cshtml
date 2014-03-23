@@ -1,0 +1,114 @@
+﻿@using MVCSports.Models;
+@model IEnumerable<MVCSports.Models.Order>
+
+@{
+    ViewBag.Title = "List of Orders";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Sport")
+        </th>
+        <th>
+            @Html.DisplayName("Type of Equipment")
+        </th>
+        <th>
+            @Html.DisplayName("Last Name")
+        </th>
+        <th>
+            @Html.DisplayName("First Name")
+        </th>
+        <th>
+            @Html.DisplayName("Email")
+        </th>
+        <th>
+            @Html.DisplayName("Date of Birth")
+        </th>
+        <th>
+            @Html.DisplayName("Street")
+        </th>
+        <th>
+            @Html.DisplayName("City")
+        </th>
+        <th>
+            @Html.DisplayName("State")
+        </th>
+        <th>
+            @Html.DisplayName("Zip")
+        </th>
+        <th>
+            @Html.DisplayName("Address Type")
+        </th>
+        <th>
+            @Html.DisplayName("Number")
+        </th>
+        <th>
+            @Html.DisplayName("Phone Type")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.state)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.addressType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phoneType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.id, category = item.category, type = item.type, lastName = item.lastName,
+                firstName = item.firstName, email = item.email, dateOfBirth = item.dateOfBirth, street = item.street, city = item.city,
+                state = item.state, zip = item.zip, addressType = item.addressType, number = item.number, phoneType = item.phoneType }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id, category = item.category, type = item.type,
+                lastName = item.lastName, firstName = item.firstName, email = item.email, dateOfBirth = item.dateOfBirth,
+                street = item.street, city = item.city, state = item.state, zip = item.zip, addressType = item.addressType,
+                number = item.number, phoneType = item.phoneType }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id, category = item.category, type = item.type,
+                lastName = item.lastName, firstName = item.firstName, email = item.email, dateOfBirth = item.dateOfBirth,
+                street = item.street, city = item.city, state = item.state, zip = item.zip, addressType = item.addressType,
+                number = item.number, phoneType = item.phoneType })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,111 @@
+﻿@model MVCSports.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Last Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("First Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Email")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Date of Birth")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateOfBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Street")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.street)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("City")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("State")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.state)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Zip")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.zip)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Address Type")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addressType)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Number")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.number)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Phone Type")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phoneType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { lastName = Model.lastName, firstName = Model.firstName, email = Model.email,
+        dateOfBirth = Model.dateOfBirth, street = Model.street, city = Model.city, state = Model.state, zip = Model.zip,
+        addressType = Model.addressType, number = Model.number, phoneType = Model.phoneType }) |
+    @Html.ActionLink("Details", "Details", new { lastName = Model.lastName, firstName = Model.firstName, email = Model.email,
+        dateOfBirth = Model.dateOfBirth, street = Model.street, city = Model.city, state = Model.state, zip = Model.zip,
+        addressType = Model.addressType, number = Model.number, phoneType = Model.phoneType }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
