@@ -1,0 +1,35 @@
+﻿@model MVCSports.Models.Equipment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Equipment</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Sport")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Type of Equipment")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.type)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id, category = Model.category, type = Model.type }) |
+    @Html.ActionLink("Details", "Details", new { id = Model.id, category = Model.category, type = Model.type }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
