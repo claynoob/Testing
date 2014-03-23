@@ -1402,7 +1402,7 @@ pre code {
 }
 table {
   max-width: 100%;
-  background-color: azure;
+  background-color: #888888;
 }
 th {
   text-align: left;

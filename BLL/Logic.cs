@@ -665,11 +665,12 @@ namespace BLL
             EquipmentDAO dao = new EquipmentDAO();
             return dao.GetEquipmentById(id);
         }
-        public OrderVM CreateOrder(string category, string type, string lastName, string firstName, string email,
+        public OrderVM CreateOrder(int id, string category, string type, string lastName, string firstName, string email,
             DateTime dateOfBirth, string street, string city, string state, string zip, string addressType,
             string number, string phoneType)
         {
             OrderVM order = new OrderVM();
+            order.id = id;
             order.category = category;
             order.type = type;
             order.lastName = lastName;
@@ -692,6 +693,7 @@ namespace BLL
             OrderDM orderDm = new OrderDM();
             if (orderVm != null)
             {
+                orderDm.id = orderVm.id;
                 orderDm.equipmentId = SetEquipmentId(orderVm, orderDm);
                 orderDm.userId = SetUserId(orderVm, orderDm);
             }
@@ -808,7 +810,7 @@ namespace BLL
                 //user.personAddressId = dao.GetUser(personAddressId, personPhoneId).id;
                 //user.personPhoneId = dao.GetUser(personAddressId, personPhoneId).id;
             }
-            return user.id;
+            return id;
         }
         public void UpdateOrder(int id, string category, string type, string lastName, string firstName, string email,
             DateTime dateOfBirth, string street, string city, string state, string zip, string addressType,
@@ -832,18 +834,16 @@ namespace BLL
             TypeDAO tdao = new TypeDAO();
             int a = SetCategoryId(category);
             int b = SetTypeId(type);
-            int c = SetCatAndTypeId(a, b);
+            int c = GetEquipId(a, b);
             bool x = dao.DoesEquipmentExist(c);
             if (x == false)
             {
                 dao.CreateEquipment(a, b);
-                equipment.categoryId = c;
-                equipment.typeId = c;
+                equipment.id = c;
             }
             else
             {
-                equipment.categoryId = c;
-                equipment.typeId = c;
+                equipment.id = c;
             }
             return equipment.id;
         }
@@ -906,7 +906,7 @@ namespace BLL
             }
             return y;
         }
-        public int SetCatAndTypeId(int categoryId, int typeId)
+        public int GetEquipId(int categoryId, int typeId)
         {
             EquipmentDAO dao = new EquipmentDAO();
             int y = GetEquipmentId(categoryId, typeId);
@@ -926,7 +926,7 @@ namespace BLL
             if (x == false)
             {
                 dao.CreatePersonPhone(personId, phoneId, typeId);
-                y = GetPersonAddressId(personId, phoneId, typeId);
+                y = GetPersonPhoneId(personId, phoneId, typeId);
             }
             return y;
         }

@@ -26,7 +26,7 @@ namespace DAL
                     while (data.Read())
                     {
                         OrderDM order = new OrderDM();
-                        order.id = Convert.ToInt32(data["id"]);
+                        order.id = Convert.ToInt32(data["orderId"]);
                         order.equipmentId = Convert.ToInt32(data["equipmentId"]);
                         order.userId = Convert.ToInt32(data["userId"]);
                         orderList.Add(order);

@@ -84,7 +84,7 @@ namespace MVCSports.Controllers
             {
                 return View("Create", order);
             }
-            logic.CreateOrder(order.category, order.type, order.lastName, order.firstName, order.email, order.dateOfBirth,
+            logic.CreateOrder(order.id, order.category, order.type, order.lastName, order.firstName, order.email, order.dateOfBirth,
                 order.street, order.city, order.state, order.zip, order.addressType, order.number, order.phoneType);
             orderList.Add(order);
             return RedirectToAction("Index");
